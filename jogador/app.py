@@ -1,5 +1,0 @@
-import movimento
-import estilo_do_uniforme
-
-
-estilo_do_uniforme.imprimir_chuteira and estilo_do_uniforme.imprimir_bandagem and estilo_do_uniforme.imprimir_luvas_do_jogador and movimento.imprimir_movimento

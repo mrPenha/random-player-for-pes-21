@@ -6,58 +6,87 @@ os.system('clear')
 chuteiras = random.randint(1, 70)
 
 #  bandagem
-munhequeiras = ['Desligado', 'Direita', 'Esquerda', 'Ambos']
-m = munhequeiras[random.randint(0, 3)]
+munhequeiras = random.choice(['Desligado', 'Direita', 'Esquerda', 'Ambos'])
 
-cor_das_munhequeiras = ['Cor do uniforme', 'Branco', 'Preto', 'Bege']
-cm = cor_das_munhequeiras[random.randint(0, 3)]
+cor_das_munhequeiras = random.choice(
+    ['Cor do uniforme', 'Branco', 'Preto', 'Bege'])
 
-tornozeleiras = ['Desligada', 'Ligada']
-t = tornozeleiras[random.randint(0, 1)]
+tornozeleiras = random.choice(['Desligada', 'Ligada'])
 
 #  luvas do jogador
-luvas_do_jogador = ['Desligado', 'Usa no inverno']
-l = luvas_do_jogador[random.randint(0, 1)]
+luvas_do_jogador = random.choice(['Desligado', 'Usa no inverno'])
 
-cor_do_uniforme = ['Branco', 'Preto', 'Vermelho',
-                   'Azul-Escuro', 'Amarelo', 'Verde', 'Rosa', 'Azul-Claro']
-c = cor_do_uniforme[random.randint(0, 7)]
+cor_da_luva = random.choice(
+    ['Branco', 'Preto', 'Vermelho', 'Azul-Escuro', 'Amarelo', 'Verde', 'Rosa', 'Azul-Claro'])
 
 
-def imprimir_chuteira():
-    print('*CHUTEIRA* \n')
-    print(f'Chuteira                 {chuteiras}')
+#  luvas do goleiro
+luvas_do_goleiro = random.randint(1, 11)
+
+#  roupa de baixo
+roupa_de_baixo = random.choice(['Verão: Desl./Inverno: Desl.', 'Verão: Desl./Inverno: Longo.',
+                               'Verão: Curto./Inverno: Curto.', 'Verão: Curto./Inverno: Longo.'])
+
+#  mangas
+mangas = random.choice(['Curto', 'Longo', 'Verão: Curto / Inverno: Longo'])
+
+#  extremidade da camisa
+extremidade_camisa = random.choice(['Por dentro', 'Por Fora'])
+
+#  comprimento da meia
+comprimento_meia = random.choice(['Padrão', 'Longo', 'Curto'])
+
+#  camisetas internas
+camisetas_internas = random.choice(['Desligado', 'Normal', 'Gola rolê'])
 
 
-def imprimir_bandagem():
-    if m == munhequeiras[0]:
-        print('*BANDAGEM* \n')
-        print(f'Munhequeiras             {m}')
-        print(f'Cor das Munhequeiras     -')
-        print(f'Tornozeleiras            {t}')
+def imprimir_estilo_uniforme():
+    print('*ESTILO DO UNIFORME* \n\n')
+    #  chuteiras
+    print(f'CHUTEIRAS \n')
+    print(f'Modelo ------------------------- {chuteiras} \n\n')
 
+    #  bandagens
+    print(f'BANDAGEM \n')
+    if munhequeiras != 'Desligado':
+        print(f'Munhequeiras ------------------- {munhequeiras} \n')
+        print(f'Cor das Munhequeiras ----------- {cor_das_munhequeiras} \n')
+        print(f'Tornozeleiras ------------------ {tornozeleiras} \n\n')
     else:
-        print('*BRANDAGEM* \n')
-        print(f'Munhequeiras             {m}')
-        print(f'Cor das Munhequeiras     {cm}')
-        print(f'Tornozeleiras            {t}')
+        print(f'Munhequeiras ------------------- {munhequeiras} \n')
+        print(f'Cor das Munhequeiras ----------- {munhequeiras} \n')
+        print(f'Tornozeleiras ------------------ {tornozeleiras} \n\n')
 
-
-def imprimir_luvas_do_jogador():
-    if l == luvas_do_jogador[0]:
-        print('*COR* \n')
-        print(f'Luvas do Jogador         {l}')
-        print(f'Cor                      -')
-
+    if luvas_do_jogador != 'Desligado':
+        print(f'LUVAS DO JOGADOR \n')
+        print(f'Modelo ------------------------- {luvas_do_jogador} \n')
+        print(f'Cor ---------------------------- {cor_da_luva} \n\n')
     else:
-        print('*COR* \n')
-        print(f'Luvas do Jogador          {l}')
-        print(f'Cor                       {c}')
+        print(f'LUVAS DO JOGADOR \n')
+        print(f'Modelo ------------------------- {luvas_do_jogador} \n\n')
+
+    #  luvas do goleiro se posição registrada == goleiro
+    print(f'LUVAS DO GOLEIRO \n')
+    print(f'Modelo ------------------------- {luvas_do_goleiro} \n\n')
+
+    print(f'ROUPA DE BAIXO \n')
+    print(f'Verão / Inverno ---------------- {roupa_de_baixo} \n\n')
+
+    #  mangas
+    print(f'MANGAS \n')
+    print(f'Verão / Inverno ---------------- {mangas} \n\n')
+
+    #  extremidade da camisa
+    print(f'EXTREMIDADE DA CAMISA \n')
+    print(f'Extremidade -------------------- {extremidade_camisa} \n\n')
+
+    #  comprimento da meia
+    print(f'COMPRIMENTO DA MEIA \n')
+    print(f'comprimento -------------------- {comprimento_meia} \n\n')
+
+    #  camisetas internas
+    print(f'CAMISETAS INTERNAS \n')
+    print(f'Camisetas ---------------------- {camisetas_internas} \n\n')
 
 
-imprimir_chuteira()
-print('---------------------------------------- \n')
-imprimir_bandagem()
-print('---------------------------------------- \n')
-imprimir_luvas_do_jogador()
-print('---------------------------------------- \n')
+imprimir_estilo_uniforme()
